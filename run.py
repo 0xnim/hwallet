@@ -12,6 +12,7 @@ def profile(name, currency):
     address = None
     if response["success"] == True:
         data = response["data"]
+        
         if name == data["name"]:
             dnsdata = data["dnsData"]
             for i in dnsdata:
@@ -24,4 +25,6 @@ def profile(name, currency):
                             wallet = wallet.replace(" ", "")
                             if wallet.startswith(currency):
                                 address = wallet.replace(currency, "")
+                            else:
+                                address = ""
     return address
