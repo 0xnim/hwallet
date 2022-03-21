@@ -27,4 +27,6 @@ def profile(name, currency):
                                 address = wallet.replace(currency, "")
                             else:
                                 address = ""
+    else: 
+        address = ""
     return address
